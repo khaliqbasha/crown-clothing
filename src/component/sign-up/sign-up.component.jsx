@@ -35,10 +35,12 @@ class SignUp extends React.Component {
             });
         } catch (err) {
             console.error(err);
+            alert(`This email address is already used, please try in another email address!`);
         }
     }
     handleChange = event => {
         const { name, value } = event.target;
+
         this.setState({ [name]: value })
     }
     render() {
