@@ -15,6 +15,7 @@ class SignUp extends React.Component {
             confirmPassword: ''
         }
     }
+
     handleSubmit = async event => {
         event.preventDefault();
 
@@ -24,10 +25,11 @@ class SignUp extends React.Component {
             alert(`Password don't match`)
             return;
         }
+
         try {
             const { user } = await auth.createUserWithEmailAndPassword(email, password);
             createUserProfileDocument(user, { displayName });
-            this.setState = ({
+            this.setState({
                 displayName: '',
                 email: '',
                 password: '',
@@ -35,7 +37,7 @@ class SignUp extends React.Component {
             });
         } catch (err) {
             console.error(err);
-            alert(`This email address is already used, please try in another email address!`);
+            alert(err);
         }
     }
     handleChange = event => {

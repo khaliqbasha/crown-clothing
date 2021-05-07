@@ -47,8 +47,8 @@ input[type='password'] {
     left: 5px;
     top: 10px;
     transition: 300ms ease all;
+}
 
-    &.shirink {
-        @include shrinkLabel();
-    }
+#shrink {
+    @include shrinkLabel();
 }
